@@ -1,5 +1,6 @@
 import React from 'react'
-import AddToCart from './AddToCart'
+import AddToCart from './AddToCart';
+
 
 const ProductCard
  = () => {
