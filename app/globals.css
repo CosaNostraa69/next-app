@@ -14,6 +14,49 @@
 }
 
 body {
-  padding: 1rem;
- 
+  
+  --foreground: rgb(var(--foreground-rgb));
+  --background: rgb(var(--background-rgb));
+  --primary: rgb(var(--primary-rgb));
+  --secondary: rgb(var(--secondary-rgb));
+  --accent: rgb(var(--accent-rgb));
+  --highlight: rgb(var(--highlight-rgb));
+  --muted: rgb(var(--muted-rgb));
+  --border: rgb(var(--border-rgb));
+  --shadow: rgb(var(--shadow-rgb));
+  --link: rgb(var(--link-rgb));
+  --code: rgb(var(--code-rgb));
+  --success: rgb(var(--success-rgb));
+  --warning: rgb(var(--warning-rgb));
+  --error: rgb(var(--error-rgb));
+  --info: rgb(var(--info-rgb));
+  --dark: rgb(var(--dark-rgb));
+  --light: rgb(var(--light-rgb));
+  --transparent: rgb(var(--transparent-rgb));
+  --current: rgb(var(--foreground-rgb));
+  --text: var(--foreground);
+  --background: var(--background);
+  --border: var(--border);
+  --shadow: var(--shadow);
+  --link: var(--link);
+  --code: var(--code);
+  --success: var(--success);
+  --warning: var(--warning);
+  --error: var(--error);
+  --info: var(--info);
+  --dark: var(--dark);
+  --light: var(--light);
+  --transparent: var(--transparent);
+  --current: var(--foreground);
+  --primary: var(--primary);
+  --secondary: var(--secondary);
+  --accent: var(--accent);
+  --highlight: var(--highlight);
+  --muted: var(--muted);
+}
+
+@layer base {
+  h1 {
+    @apply font-extrabold text-2xl mb-3 ;
+  }
 }
