@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import schema from "./schema";
 
 export function GET(request: NextRequest) {
     return NextResponse.json([
@@ -9,5 +10,23 @@ export function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
     const body = await request.json();
-    return NextResponse.json({ id: 3, ...body }, { status: 201 });
+    const validation = schema.safeParse(body);
+    if (!validation.success) {
+        return NextResponse.json(validation.error.errors, { status: 400 });
+    }
+    return NextResponse.json({ id: 10, name: body.name, price: body.price}, { status: 201 });
 }
+
+export async function PUT(request: NextRequest) {
+    const body = await request.json();
+    const validation = schema.safeParse(body);
+    if (!validation.success) {
+        return NextResponse.json(validation.error.errors, { status: 400 });
+    }
+    return NextResponse.json({ id: 10, name: body.name, price: body.price}, { status: 200 });
+}
+
+export async function DELETE(request: NextRequest) {
+    return NextResponse.json({ message: 'Product deleted' });
+}
+
